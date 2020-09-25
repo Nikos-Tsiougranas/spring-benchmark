@@ -1,0 +1,52 @@
+  # actuator
+management:
+  endpoint:
+    health:
+      show-details: true # show full health indicator details only if authorized
+    shutdown:
+      enabled: true
+#  health:
+#    refresh:
+#      enabled: false  # disables refreshScope health indicator, can be enabled if /refresh actuator endpoint is used by spring-cloud-config and spring-cloud-bus-amqp
+#  info:
+#    git:
+#      mode: full
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+# spring boot
+server:
+  port: 8080
+spring:
+  jmx:
+    enabled: true
+  application:
+    name: boilerplate
+  profiles:
+    active: local
+  mvc:
+    throw-exception-if-no-handler-found: true
+  resources:
+    add-mappings: false
+  security:
+    user:
+      password: ${random.value} # added just to disable the logging of the auto-generated in-memory user security password in UserDetailsServiceAutoConfiguration
+---
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/benchmark?stringtype=unspecified
+    username: devuser
+    password: devpass
+  jpa:
+    hibernate:
+      ddl-auto: none
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    url: jdbc:postgresql://localhost:5432/benchmark?stringtype=unspecified
+    user: devuser
+    password: devpass
