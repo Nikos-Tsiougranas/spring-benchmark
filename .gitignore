@@ -1,0 +1,69 @@
+# Build Artifacts
+/build/
+/modules/**/bin/
+/modules/**/build/
+/modules/**/out/
+
+# Dependencies
+**/node_modules/
+
+# Test artifacts
+/modules/admin/client/__test__
+
+# Lint
+**/.checkstyle
+
+# Gradle
+.gradle
+
+# Logs
+/logs/
+/modules/*/logs/
+
+# Configuration
+/config/**/application*
+
+# STS
+**/.apt_generated
+**/.classpath
+**/.factorypath
+**/.project
+**/.settings
+**/.springBeans
+**/.sts4-cache
+
+.gradle
+
+# IntelliJ IDEA
+**/.idea
+**/*.iws
+**/*.iml
+**/*.ipr
+
+# NetBeans
+**/nbproject/private/
+**/nbbuild/
+**/nbdist/
+**/.nb-gradle/
+
+# Editors
+**/.c9/
+**/*.launch
+**/*.sublime-workspace
+
+# Docker Compose
+docker-compose.override.yaml
+local.env
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+java_pid*
+
+# OS-X
+.DS_Store
+
+# Pipeline
+modules/**/ci/dependencies
+
+# VS code
+modules/admin/client/.vscode/launch.json
